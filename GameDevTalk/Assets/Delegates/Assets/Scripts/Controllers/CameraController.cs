@@ -57,39 +57,31 @@ public class CameraController : MonoBehaviour
 
     void OnEnable()
     {
-        myInputs.eventMove.AddListener(delegate (MoveEventData ed) 
-        {
-            xyzMoveHandler.OnReform(ed.axis);
-        });
-        
-        myInputs.SubscribeToEvent(InputsEventED.Move, OnMoveCamera);
-        myInputs.SubscribeToEvent(InputsEventED.Rotate, OnRotateCamera);
-        myInputs.SubscribeToEvent(InputsEventED.Zoom, OnZoomCamera);
+        myInputs.eventMove += OnMoveCamera;
+        myInputs.eventRotate += OnRotateCamera;
+        myInputs.eventZoom += OnZoomCamera;
     }
 
     void OnDisable()
     {
-        myInputs.UnsubscribeFromEvent(InputsEventED.Move, OnMoveCamera);
-        myInputs.UnsubscribeFromEvent(InputsEventED.Rotate, OnRotateCamera);
-        myInputs.UnsubscribeFromEvent(InputsEventED.Zoom, OnZoomCamera);
+        myInputs.eventMove -= OnMoveCamera;
+        myInputs.eventRotate -= OnRotateCamera;
+        myInputs.eventZoom -= OnZoomCamera;
     }
 
-    void OnRotateCamera(EventData ed)
+    void OnRotateCamera(Vector3 ed)
     {
-        Vector3 axis = ((RotateEventData)ed).axis;
-        hvRotateHandler.OnReform(axis);
+        hvRotateHandler.OnReform(ed);
     }
 
-    void OnMoveCamera(EventData ed)
+    void OnMoveCamera(Vector3 ed)
     {
-        Vector3 axis = ((MoveEventData)ed).axis;
-        xyzMoveHandler.OnReform(axis);
+        xyzMoveHandler.OnReform(ed);
     }
 
-    void OnZoomCamera(EventData ed)
+    void OnZoomCamera(Vector3 ed)
     {
-        Vector3 axis = ((ZoomEventData)ed).axis;
-        zoomHandler.OnReform(axis);
+        zoomHandler.OnReform(ed);
     }
 
 }

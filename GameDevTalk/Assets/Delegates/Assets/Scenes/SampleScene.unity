@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 236846990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188dd6db1ac2a0f46aa7973b17365a04, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb14863298b5324e860d8091da919bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &236846992
@@ -555,12 +555,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753046425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb4de351e6c69547a90c59882106ec8, type: 3}
+  m_Script: {fileID: 11500000, guid: 05348e13093d633498e89849a73e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveCameraPower: 0.5
-  camSource: {fileID: 963194227}
-  camTargetPos: {x: 1, y: 1, z: 1}
+  camSource: {fileID: 0}
+  camTargetPos: {x: 0, y: 0, z: 0}
   camTarget: {fileID: 0}
   myInputs: {fileID: 236846991}
 --- !u!114 &1753046427
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753046425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8033022990a5a73479f08b13df7843bf, type: 3}
+  m_Script: {fileID: 11500000, guid: f0e990945614ca44885768a8c4c7060e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flow: 2
@@ -589,25 +589,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753046425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad55b66056df4d943b58c7c15cac6c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flow: 2
-  friction: 2
-  power: 4
-  bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 15, y: 15, z: 15}
---- !u!114 &1753046429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753046425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de24a7d0ecebb474a9f47a62482071cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5511b82606ca140498fd1ebeb66ee9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minVRateRotation: 3
@@ -619,6 +601,24 @@ MonoBehaviour:
   rotateHFriction: 0.05
   rotateHSpeed: 5
   torqueHorizontal: 0
+--- !u!114 &1753046429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753046425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6eebe2a18f98e419b0f437ae1df92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flow: 2
+  friction: 2
+  power: 4
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 15, y: 15, z: 15}
 --- !u!4 &1753046430
 Transform:
   m_ObjectHideFlags: 0
